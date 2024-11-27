@@ -108,11 +108,11 @@ export const logout = (req, res) => {
 export const updateProfile = async (req, res) => {
     try {
         const { profilePic } = req.body;
-        const userId = req.user._id;        
+        const userId = req.user._id;
 
         if (!profilePic) {
             return res.status(400).json({
-                message: "Profile pic is required"
+                message: "Profile pic is required",
             });
         }
 
@@ -127,7 +127,7 @@ export const updateProfile = async (req, res) => {
     } catch (error) {
         console.log("Error in update profile controller", error.message);
         res.status(500).json({
-            message: "Internal server error"
+            message: "Internal server error",
         });
     }
 };
